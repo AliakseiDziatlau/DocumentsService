@@ -50,10 +50,4 @@ public class TableStorageRepository : ITableStorageRepository
             Url = entity["Url"].ToString()
         });
     }
-
-    public async Task<string> GetDocumentUrlAsync(string id)
-    {
-        var entity = await _tableClient.GetEntityAsync<TableEntity>("Documents", id);
-        return entity.Value["Url"].ToString();
-    }
 }

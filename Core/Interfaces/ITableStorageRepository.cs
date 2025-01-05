@@ -8,5 +8,4 @@ public interface ITableStorageRepository
     Task DeleteDocumentAsync(string id);
     Task<Documents> GetDocumentByIdAsync(string id);
     Task<IEnumerable<Documents>> GetAllDocumentsAsync();
-    Task<string> GetDocumentUrlAsync(string id);
 }

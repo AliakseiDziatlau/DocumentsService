@@ -9,5 +9,4 @@ public interface IDocumentService
     Task<Documents> GetDocumentByIdAsync(string documentId);
     Task<IEnumerable<Documents>> GetAllDocumentsAsync();
     Task<Stream> DownloadDocumentAsync(string documentId);
-    Task<string> GetDocumentUrlAsync(string documentId);
 }
