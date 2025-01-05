@@ -62,6 +62,18 @@ public class DocumentService : IDocumentService
         return await _blobStorageRepository.DownloadBlobAsync(documentId);
     }
     
+    public async Task<string> GetDocumentUrlAsync(string documentId)
+    {
+        var documentUrl = await _tableStorageRepository.GetDocumentUrlAsync(documentId);
+
+        if (string.IsNullOrEmpty(documentUrl))
+        {
+            throw new KeyNotFoundException("URL for this document was not found");
+        }
+
+        return documentUrl;
+    }
+    
     private string GenerateFileUrl(string documentId)
     {
         return $"https://mydomain.com/documents/{documentId}";

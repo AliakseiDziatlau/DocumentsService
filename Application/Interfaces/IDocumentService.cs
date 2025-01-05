@@ -8,5 +8,6 @@ public interface IDocumentService
     Task DeleteDocumentAsync(string documentId);
     Task<Documents> GetDocumentByIdAsync(string documentId);
     Task<IEnumerable<Documents>> GetAllDocumentsAsync();
-    Task<Stream> DownloadDocumentAsync(string documentId); 
+    Task<Stream> DownloadDocumentAsync(string documentId);
+    Task<string> GetDocumentUrlAsync(string documentId);
 }

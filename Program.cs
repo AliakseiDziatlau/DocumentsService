@@ -1,5 +1,7 @@
 using DocumentsService.Application.Interfaces;
 using DocumentsService.Application.Services;
+using DocumentsService.Core.Interfaces;
+using DocumentsService.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,21 @@ builder.Configuration
 
 //DI
 builder.Services.AddScoped<IDocumentService, DocumentService>();
+builder.Services.AddScoped<IBlobStorageRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration["AzureStorage:BlobConnectionString"];
+    var containerName = configuration["AzureStorage:BlobContainerName"];
+    return new BlobStorageRepository(connectionString, containerName);
+});
+
+builder.Services.AddScoped<ITableStorageRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration["AzureStorage:TableConnectionString"];
+    var tableName = configuration["AzureStorage:TableName"];
+    return new TableStorageRepository(connectionString, tableName);
+});
 
 builder.Services.AddControllers();
 
