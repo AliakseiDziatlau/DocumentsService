@@ -1,3 +1,6 @@
+using DocumentsService.Application.Interfaces;
+using DocumentsService.Application.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var enviroment = builder.Environment.EnvironmentName;
@@ -6,6 +9,10 @@ builder.Configuration
     .AddJsonFile($"appsettings.{enviroment}.json", optional: true, reloadOnChange: true)
     .AddUserSecrets<Program>(optional: true)
     .AddEnvironmentVariables();
+
+
+//DI
+builder.Services.AddScoped<IDocumentService, DocumentService>();
 
 builder.Services.AddControllers();
 

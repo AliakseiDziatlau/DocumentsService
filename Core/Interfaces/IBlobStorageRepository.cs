@@ -2,7 +2,7 @@ namespace DocumentsService.Core.Interfaces;
 
 public interface IBlobStorageRepository
 {
-    Task UploadBlobAsync(string blobName, Stream content);
-    Task DeleteBlobAsync(string blobName);
-    Task<Stream> DownloadBlobAsync(string blobName);
+    Task UploadBlobAsync(string id, Stream content);
+    Task DeleteBlobAsync(string id);
+    Task<Stream> DownloadBlobAsync(string id);
 }
