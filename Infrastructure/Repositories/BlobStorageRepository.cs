@@ -9,11 +9,8 @@ public class BlobStorageRepository : IBlobStorageRepository
     
     public BlobStorageRepository(string connectionString, string containerName)
     {
-        // Создаем клиент для контейнера в Blob Storage
         var blobServiceClient = new BlobServiceClient(connectionString);
         _containerClient = blobServiceClient.GetBlobContainerClient(containerName);
-
-        // Убеждаемся, что контейнер существует
         _containerClient.CreateIfNotExists();
     }
     

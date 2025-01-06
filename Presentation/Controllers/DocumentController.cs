@@ -18,7 +18,7 @@ public class DocumentController : ControllerBase
     {
         if (file == null || file.Length == 0)
         {
-            return BadRequest("Файл отсутствует или пуст.");
+            return BadRequest("File is empty or does not exist");
         }
 
         using var stream = file.OpenReadStream();
