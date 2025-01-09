@@ -6,7 +6,7 @@ using DocumentsService.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-ConfigurationSetup.AddCustomConfiguration(builder.Configuration, builder.Environment);
+ConfigurationSetup.AddCustomConfiguration(builder.Configuration , builder.Environment);
 
 builder.Services.AddCustomServices(builder.Configuration);
 
