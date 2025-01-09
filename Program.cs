@@ -1,6 +1,6 @@
+using DocumentsService.Application.Configurations;
 using DocumentsService.Application.Interfaces;
 using DocumentsService.Application.Services;
-using DocumentsService.Configurations;
 using DocumentsService.Core.Interfaces;
 using DocumentsService.Infrastructure.Repositories;
 

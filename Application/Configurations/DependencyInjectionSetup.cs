@@ -3,7 +3,7 @@ using DocumentsService.Application.Services;
 using DocumentsService.Core.Interfaces;
 using DocumentsService.Infrastructure.Repositories;
 
-namespace DocumentsService.Configurations;
+namespace DocumentsService.Application.Configurations;
 
 public static class DependencyInjectionSetup
 {

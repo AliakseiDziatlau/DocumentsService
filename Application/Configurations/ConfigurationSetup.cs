@@ -1,4 +1,4 @@
-namespace DocumentsService.Configurations;
+namespace DocumentsService.Application.Configurations;
 
 public static class ConfigurationSetup
 {

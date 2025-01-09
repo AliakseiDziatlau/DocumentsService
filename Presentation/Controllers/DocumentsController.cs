@@ -5,10 +5,10 @@ namespace DocumentsService.Presentation.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class DocumentController : ControllerBase
+public class DocumentsController : ControllerBase
 {
     private readonly IDocumentService _documentService;
-    public DocumentController(IDocumentService documentService)
+    public DocumentsController(IDocumentService documentService)
     {
         _documentService = documentService;
     }
