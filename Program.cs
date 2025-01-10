@@ -1,12 +1,8 @@
 using DocumentsService.Application.Configurations;
-using DocumentsService.Application.Interfaces;
-using DocumentsService.Application.Services;
-using DocumentsService.Core.Interfaces;
-using DocumentsService.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-ConfigurationSetup.AddCustomConfiguration(builder.Configuration , builder.Environment);
+builder.Configuration.AddCustomConfiguration(builder.Environment);
 
 builder.Services.AddCustomServices(builder.Configuration);
 
@@ -16,6 +12,6 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
-SwaggerSetup.ConfigureSwagger(app);
-MiddlewareSetup.ConfigureMiddleware(app);
+app.ConfigureSwagger();
+app.ConfigureMiddleware();
 app.Run();

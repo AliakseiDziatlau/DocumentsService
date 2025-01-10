@@ -2,7 +2,7 @@ namespace DocumentsService.Application.Configurations;
 
 public static class SwaggerSetup
 {
-    public static void ConfigureSwagger(WebApplication app)
+    public static void ConfigureSwagger(this WebApplication app)
     {
         if (app.Environment.IsDevelopment())
         {

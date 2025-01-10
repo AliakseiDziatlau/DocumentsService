@@ -2,7 +2,7 @@ namespace DocumentsService.Application.Configurations;
 
 public static class ConfigurationSetup
 {
-    public static void AddCustomConfiguration(ConfigurationManager configuration, IWebHostEnvironment environment)
+    public static void AddCustomConfiguration(this ConfigurationManager configuration, IWebHostEnvironment environment)
     {
         configuration
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
